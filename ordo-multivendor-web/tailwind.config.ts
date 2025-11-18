@@ -26,8 +26,8 @@ const config = {
         none: "none",
       },
       colors: {
-        "primary-color": "#B83330",
-        "secondary-color": "#E0A896",
+        "primary-color": "#FF8000",
+        "secondary-color": "#FFF2E6",
         "secondary-main" : "#1F4021",
         "secondary-border-color": "#1F4021",
         sky: {
