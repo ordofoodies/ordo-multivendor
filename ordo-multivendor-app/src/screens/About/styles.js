@@ -126,7 +126,7 @@ const styles = (props = null) =>
     //   zIndex: 999
     // },
     // tab: {
-    //   backgroundColor: '#E0A896',
+    //   backgroundColor: '#FFF2E6',
     //   width: '48%',
     //   height: verticalScale(35),
     //   justifyContent: 'center',

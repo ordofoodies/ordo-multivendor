@@ -61,7 +61,7 @@ const styles = (props = null) =>
     },
 
     textRight: {
-      backgroundColor: '#E0A896',
+      backgroundColor: '#FFF2E6',
       color: '#1F2937',
       padding: 10,
       marginBottom: 5

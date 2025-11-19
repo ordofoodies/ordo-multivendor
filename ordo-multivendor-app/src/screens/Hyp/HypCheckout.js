@@ -185,7 +185,7 @@ function HypCheckout(props) {
         onNavigationStateChange={handleResponse}
       />
 
-      {loading ? <ActivityIndicator style={{ position: 'absolute', bottom: '50%', left: '50%' }} size='large' color='#B83330' /> : null}
+      {loading ? <ActivityIndicator style={{ position: 'absolute', bottom: '50%', left: '50%' }} size='large' color='#FF8000' /> : null}
     </View>
   )
 }
