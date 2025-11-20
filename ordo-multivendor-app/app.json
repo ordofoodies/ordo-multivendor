@@ -36,7 +36,7 @@
       "bundleIdentifier": "com.ordocustomer.app",
       "icon": "./assets/icon.png",
       "config": {
-        "googleMapsApiKey": "AIzaSyCcm7_Wd7uvmC9YnYLu2JHGWPt6z1MaL1E"
+        "googleMapsApiKey": "AIzaSyASc2PXUyjCvYdI-3dB1J4VycPWYJp_izI"
       },
       "usesAppleSignIn": true,
       "infoPlist": {
@@ -70,7 +70,7 @@
       },
       "config": {
         "googleMaps": {
-          "apiKey": "AIzaSyCcm7_Wd7uvmC9YnYLu2JHGWPt6z1MaL1E"
+          "apiKey": "AIzaSyASc2PXUyjCvYdI-3dB1J4VycPWYJp_izI"
         }
       },
       "permissions": ["android.permission.ACCESS_FINE_LOCATION", "android.permission.ACCESS_COARSE_LOCATION", "android.permission.FOREGROUND_SERVICE", "com.google.android.gms.permission.AD_ID"],
