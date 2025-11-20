@@ -50,7 +50,7 @@
       "supportsTablet": true,
       "bundleIdentifier": "com.ordorider.app",
       "config": {
-        "googleMapsApiKey": "AIzaSyCcm7_Wd7uvmC9YnYLu2JHGWPt6z1MaL1E"
+        "googleMapsApiKey": "AIzaSyASc2PXUyjCvYdI-3dB1J4VycPWYJp_izI"
       },
       "icon": "./lib/assets/images/icon.png",
       "infoPlist": {
@@ -72,7 +72,7 @@
       ],
       "config": {
         "googleMaps": {
-          "apiKey": "AIzaSyCcm7_Wd7uvmC9YnYLu2JHGWPt6z1MaL1E"
+          "apiKey": "AIzaSyASc2PXUyjCvYdI-3dB1J4VycPWYJp_izI"
         }
       },
       "package": "com.ordorider.app",
