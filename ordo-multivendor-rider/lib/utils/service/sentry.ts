@@ -5,7 +5,7 @@ export const initSentry = () => {
   console.log("Initializing Sentry");
   // if (!SENTRY_DSN) return;
   Sentry.init({
-    dsn: "https://9303b1d33deae903abe4e00ea9f25467@o4507787652694016.ingest.us.sentry.io/4508759522017280",
+    dsn: "https://797ccc3f12e20a2abb9966e2a798c31d@o4510397051502592.ingest.de.sentry.io/4510397125361744",
     environment: "development",
     debug: false,
     // enableTracing: false, // Disables tracing completely
