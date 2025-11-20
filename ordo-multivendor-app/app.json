@@ -45,7 +45,7 @@
         "NSUserTrackingUsageDescription": "Allow this app to collect app-related data that can be used for tracking you or your device.",
         "CFBundleURLTypes": [
           {
-            "CFBundleURLSchemes": ["com.googleusercontent.apps.650001300965-dkji7jutv8gc5m4n7cdg3nft87sauhn7"]
+            "CFBundleURLSchemes": ["com.googleusercontent.apps.822560760184-qjcj5ho18j2kpdi03ne4cejlfs55t1rl"]
           }
         ],
         "ITSAppUsesNonExemptEncryption": false
