@@ -5,20 +5,20 @@
 
 export const Colors = {
   light: {
-    primary: "#B83330",
+    primary: "#FF8000",
     themeBackground: "#FAFAFA",
     iconColor: "#333333",
-    tagColor: "##EAF7E5",
-    iconPink: "##EAF7E5",
+    tagColor: "#FFF2E6",
+    iconPink: "#FFF2E6",
     radioColor: "#FFF",
-    radioOuterColor: "##EAF7E5",
-    spinnerColor: "##EAF7E5",
+    radioOuterColor: "#FFF2E6",
+    spinnerColor: "#FFF2E6",
     orderComplete: "#89a207",
     orderUncomplete: "#fe0000",
     horizontalLine: "#B8B8B8",
-    buttonBackground: "##EAF7E5",
+    buttonBackground: "#FFF2E6",
     buttonText: "black",
-    buttonBackgroundPink: "##EAF7E5",
+    buttonBackgroundPink: "#FFF2E6",
     buttonTextPink: "#FFF",
     textErrorColor: "#FA7751",
     headerBackground: "#FFF",
@@ -26,12 +26,12 @@ export const Colors = {
     fontMainColor: "#212121",
     fontSecondColor: "#949393",
     cartContainer: "#FFF",
-    startColor: "##EAF7E5",
+    startColor: "#FFF2E6",
     white: "#FFF",
     black: "#000",
     tabNaviatorBackground: "#1F2937",
     secondaryTextColor: "#4B5563",
-    lowOpacityPrimaryColor: "#E0A896",
+    lowOpacityPrimaryColor: "#FFF2E6",
     mainTextColor: "#000000",
     switchButtonColor: "#4F46E5",
     sidebarIconBackground: "#E5E7EB",
@@ -41,15 +41,15 @@ export const Colors = {
     mapBackground: "#ffffff",
   },
   dark: {
-    primary: "#B83330", // Slightly darker green to avoid too much brightness
+    primary: "#FF8000", // Slightly darker green to avoid too much brightness
     themeBackground: "black", // Dark gray for background
     screenBackground: "black",
     iconColor: "black", // Light gray for icons
     tagColor: "#8CA30D", // Muted green for tags
     iconPink: "#8CA30D",
     radioColor: "#1E1E1E", // Matches the dark background
-    radioOuterColor: "##EAF7E5",
-    spinnerColor: "##EAF7E5",
+    radioOuterColor: "##FFF2E6",
+    spinnerColor: "##FFF2E6",
     orderComplete: "#6F8B05", // Muted green
     orderUncomplete: "#FF6B6B", // Softer red for dark mode
     horizontalLine: "#444444", // Dark gray for dividers
@@ -67,7 +67,7 @@ export const Colors = {
     white: "#E0E0E0", // Light gray instead of pure white
     black: "#000",
     secondaryTextColor: "#4B5563",
-    lowOpacityPrimaryColor: "#E0A896",
+    lowOpacityPrimaryColor: "#FFF2E6",
     mainTextColor: "#f2f2f2",
     switchButtonColor: "#4F46E5",
     sidebarIconBackground: "#E5E7EB",
