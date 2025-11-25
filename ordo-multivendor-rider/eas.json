@@ -17,7 +17,7 @@
       "distribution": "internal",
       "android": {
         "buildType": "apk",
-        "resourceClass": "large"
+        // "resourceClass": "large"
       },
       "env": {
         "SENTRY_AUTH_TOKEN": "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"
