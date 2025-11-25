@@ -14,7 +14,7 @@ const useNearByRestaurantsPreview = (
   enabled = true,
   page = 1,
   limit = 10,
-  shopType?: "restaurant" | "grocery" | null // <-- 🔑 allow passing
+  shopType?: string | null
 ) => {
   const { userAddress } = useUserAddress();
   const userLongitude = Number(userAddress?.location?.coordinates[0]) || 0;
@@ -38,9 +38,8 @@ const useNearByRestaurantsPreview = (
     data?.nearByRestaurantsPreview?.restaurants ?? [];
 
   const groceriesData: IRestaurant[] =
-    queryData?.filter(
-      (item) => item?.shopType?.toLowerCase() === "grocery"
-    ) ?? [];
+    queryData?.filter((item) => item?.shopType?.toLowerCase() === "grocery") ??
+    [];
 
   const restaurantsData: IRestaurant[] =
     queryData?.filter(

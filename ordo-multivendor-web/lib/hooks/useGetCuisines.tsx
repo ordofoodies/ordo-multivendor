@@ -10,10 +10,10 @@ import { ICuisinesResponse, ICuisinesData } from "@/lib/utils/interfaces";
 // context
 import { useUserAddress } from "../context/address/address.context";
 
-const useGetCuisines = (enabled = true) => {
+const useGetCuisines = (enabled = true, shoptype?: string) => {
   const { userAddress } = useUserAddress();
-  const userLongitude = userAddress?.location?.coordinates[0] || 0
-  const userLatitude = userAddress?.location?.coordinates[1] || 0
+  const userLongitude = userAddress?.location?.coordinates[0] || 0;
+  const userLatitude = userAddress?.location?.coordinates[1] || 0;
 
   const { data, loading, error, networkStatus } = useQuery<ICuisinesResponse>(
     NEAR_BY_RESTAURANTS_CUISINES,
@@ -21,7 +21,7 @@ const useGetCuisines = (enabled = true) => {
       variables: {
         latitude: userLatitude,
         longitude: userLongitude,
-        shopType: null,
+        shopType: shoptype ?? null,
       },
       fetchPolicy: "cache-and-network",
       skip: !enabled,
