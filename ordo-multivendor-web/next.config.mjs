@@ -138,6 +138,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: '*.s3.*.amazonaws.com',
       },
+       {
+        protocol: 'https',
+        hostname: 'ordo-bucket.s3.us-east-2.amazonaws.com',
+      },
     ], // Add placehold.co as an allowed domain
   },
 };
