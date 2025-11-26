@@ -127,7 +127,7 @@ export default function LoginWithEmail({
         label={t("Continue_with_mail")}
         loading={isLoading}
         onClick={handleSubmit}
-        className={`bg-[#5AC12F] flex items-center justify-center gap-x-4 px-3 rounded-full border border-gray-300 p-3 mt-6 w-full md:w-72 self-center`}
+        className={`bg-primary-color flex items-center justify-center gap-x-4 px-3 rounded-full border border-gray-300 p-3 mt-6 w-full md:w-72 self-center`}
       />
     </div>
   );

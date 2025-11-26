@@ -123,7 +123,7 @@ export default function EnterPassword({
             <CustomButton
               label={t("continue_label")}
               loading={isLoading}
-              className="bg-[#5AC12F] w-full rounded-full border border-gray-300 p-3"
+              className="bg-primary-color w-full rounded-full border border-gray-300 p-3"
               onClick={handleSubmit}
             />
 
