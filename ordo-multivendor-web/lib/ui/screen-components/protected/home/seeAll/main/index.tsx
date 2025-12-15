@@ -3,6 +3,7 @@
 import React, { useCallback, useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { useQuery } from "@apollo/client";
+import { useTranslations } from "next-intl";
 
 import Card from "@/lib/ui/useable-components/card";
 import SquareCard from "@/lib/ui/useable-components/square-card";
@@ -22,6 +23,7 @@ import AuthGuard from "@/lib/hoc/auth.guard";
 
 const RESTAURANT_SLUGS = new Set(["popular-restaurants", "popular-stores"]);
 
+
 function SeeAllSection() {
   const router = useRouter();
   const params = useParams();
@@ -32,7 +34,8 @@ function SeeAllSection() {
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
   const limit = 10;
-
+ 
+  const t = useTranslations()
 
   // Title from slug
   const title = slug
@@ -138,7 +141,7 @@ function SeeAllSection() {
     return (
       <ProtectedFavRestaurants>
         <div className="w-full py-6 flex flex-col gap-6">
-          <HomeHeadingSection title={title} showFilter={false} />
+          <HomeHeadingSection title={t(title)} showFilter={false} />
           {isFavouriteRestaurantsLoading ? (
             <CardSkeletonGrid count={4} />
           ) : FavouriteRestaurantsData?.userFavourite &&
@@ -161,7 +164,7 @@ function SeeAllSection() {
   if (!items.length) return <div>No items found</div>;
 
   return (
-    <>
+    <div className="mt-16">
       <HomeHeadingSection title={title} showFilter={false} />
 
       <div className="mb-20">
@@ -213,7 +216,7 @@ function SeeAllSection() {
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 }
 

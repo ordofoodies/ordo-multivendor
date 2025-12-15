@@ -351,7 +351,7 @@ export default function Cart({ onClose }: CartProps) {
         {/* Fixed Checkout Button */}
         <div className="p-4 flex flex-col justify-center items-center border-t bg-white dark:bg-gray-800 ">
           <button
-            className="flex justify-between items-center w-full bg-[#5AC12F] text-black rounded-full px-4 py-3"
+            className="flex justify-between items-center w-full bg-primary-color text-black rounded-full px-4 py-3"
             onClick={() => {
               router.push("/order/checkout");
               if (onClose) onClose();
@@ -359,7 +359,7 @@ export default function Cart({ onClose }: CartProps) {
             type="button"
           >
             <div className="flex items-center">
-              <span className="bg-black text-[#5AC12F] rounded-full w-6 h-6 flex items-center justify-center mr-2 rtl:ml-2 text-sm font-medium">
+              <span className="bg-black text-primary-color rounded-full w-6 h-6 flex items-center justify-center mr-2 rtl:ml-2 text-sm font-medium">
                 {cartCount}
               </span>
               <span className="text-black text-base font-medium">

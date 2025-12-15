@@ -114,7 +114,7 @@ export default function EnterPassword({
             <div className="flex justify-end w-full">
               <span
                 onClick={() => handleChangePanel(8)}
-                className="text-[#5AC12F] hover:underline text-sm font-medium cursor-pointer"
+                className="text-primary-color hover:underline text-sm font-medium cursor-pointer"
               >
                 {t("forgot_password_label")}
               </span>

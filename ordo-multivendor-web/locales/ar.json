@@ -939,5 +939,17 @@
   "active_orders_message": "لديك حالياً {{count}} {{orderText}} نشطة. يمكنك حذف حسابك فقط بعد اكتمال جميع طلباتك.",
   "order": "طلب",
   "orders": "طلبات",
-  "ok": "موافق"
+  "ok": "موافق",
+  "shop-types" : "متجر بقالة",
+  "restaurants-near-you": "مطاعم بقالة",
+  "Restaurants near you": "مطاعم بقالة قريبة منك",
+  "Grocery list": "قائمة البقالة",
+  "Most ordered restaurants": "المطاعم الأكثر طلبًا",
+  "Top grocery picks": "أفضل اختيارات البقالة",
+  "Popular stores": "المتاجر الشائعة",
+  "Popular restaurants": "المطاعم الشعبية",
+  "Restaurant cuisines": "مطاعم المطبخ",
+  "Grocery cuisines": "مأكولات البقالة",
+  "AcceptedRestaurantJustnow": "قبل المطعم طلبك للتو وبدأ بتحضير طعامك. {riderMessage}",
+  "be_the_first_to_share_your_experience": "كن أول من يشارك تجربته ويساعد الآخرين في اتخاذ قرارات أفضل!"
 }

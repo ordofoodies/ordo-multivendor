@@ -153,15 +153,15 @@ export default function StoreDetailsScreen() {
       >
         <span
           className={`mx-2 ${item.items && "font-semibold"} text-${
-            isClicked ? "[#5AC12F]" : "gray-600"
+            isClicked ? "primary-color" : "gray-600"
           }
-            dark:text-${isClicked ? "[#5AC12F]" : "gray-300"}`}
+            dark:text-${isClicked ? "primary-color" : "gray-300"}`}
         >
           {item.label}
         </span>
         {/* <span
           className={`mx-2 ${item.items && "font-semibold"} text-${
-            isClicked ? "[#5AC12F]" : "gray-100"
+            isClicked ? "primary-color" : "gray-100"
           }`}
         >
           {item.label}
