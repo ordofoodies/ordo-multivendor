@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
 import { useContext, useEffect, useState, createContext } from "react";
 import { AudioPlayer, useAudioPlayer, AudioSource } from "expo-audio";
+import { AppState } from "react-native";
 // Interface
 import {
   ISoundContext,
@@ -16,6 +17,7 @@ export const SoundProvider = ({ children }: ISoundContextProviderProps) => {
   // State
   const [audioPlayer, setAudioPlayer] = useState<AudioPlayer | null>(null);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  const [isAppActive, setIsAppActive] = useState<boolean>(true);
   
   // Context/Hooks
   const { assignedOrders } = useUserContext();
@@ -41,20 +43,22 @@ export const SoundProvider = ({ children }: ISoundContextProviderProps) => {
   };
 
   const stopSound = async () => {
-    if (audioPlayer && isPlaying) {
-      try {
-        audioPlayer.pause();
-        setIsPlaying(false);
-      } catch (err) {
-        console.log("Error stopping sound:", err);
+    try {
+      if (player) {
+        player.loop = false;
+        player.pause();
+        player.seekTo(0);
       }
+      setIsPlaying(false);
+    } catch (err) {
+      console.log("Error stopping sound:", err);
     }
   };
 
   // Audio player event listeners
   useEffect(() => {
-    const playingSubscription = player.addListener('playingChange', (isPlaying) => {
-      setIsPlaying(isPlaying);
+    const playingSubscription = player.addListener('playbackStatusUpdate', (status) => {
+      setIsPlaying(status.playing || false);
     });
 
     return () => {
@@ -72,9 +76,11 @@ export const SoundProvider = ({ children }: ISoundContextProviderProps) => {
 
       const shouldPlaySound = !!new_order;
 
-      if (shouldPlaySound && !isPlaying) {
+      if (shouldPlaySound && !isPlaying && isAppActive) {
         playSound();
       } else if (!shouldPlaySound && isPlaying) {
+        stopSound();
+      } else if (!isAppActive && isPlaying) {
         stopSound();
       }
     } else {
@@ -86,7 +92,33 @@ export const SoundProvider = ({ children }: ISoundContextProviderProps) => {
         stopSound();
       }
     };
-  }, [assignedOrders, isPlaying]);
+  }, [assignedOrders, isPlaying, isAppActive]);
+
+  // Handle app state changes
+  useEffect(() => {
+    const handleAppStateChange = (nextAppState: string) => {
+      console.log('App state changed to:', nextAppState);
+      setIsAppActive(nextAppState === 'active');
+      
+      if (nextAppState !== 'active') {
+        try {
+          player.loop = false;
+          player.pause();
+          player.seekTo(0);
+          console.log('Sound stopped due to app state change');
+        } catch (err) {
+          console.log('Error stopping sound on app state change:', err);
+        }
+        setIsPlaying(false);
+      }
+    };
+
+    const subscription = AppState.addEventListener('change', handleAppStateChange);
+
+    return () => {
+      subscription?.remove();
+    };
+  }, [player]);
 
   // Cleanup on unmount
   useEffect(() => {

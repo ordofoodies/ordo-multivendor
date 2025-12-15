@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
 import { useContext, useEffect, useState, createContext } from "react";
 import { Audio } from "expo-av";
+import { AppState } from "react-native";
 // Interface
 import {
   ISoundContext,
@@ -16,6 +17,7 @@ const SoundContext = createContext<ISoundContext>({} as ISoundContext);
 export const SoundProvider = ({ children }: ISoundContextProviderProps) => {
   // State
   const [sound, setSound] = useState<Audio.SoundObject | null>(null);
+  const [isAppActive, setIsAppActive] = useState<boolean>(true);
   // Context/Hooks
   const { hasNewOrders } = useOrders();
 
@@ -52,14 +54,33 @@ export const SoundProvider = ({ children }: ISoundContextProviderProps) => {
     }
   };
 
+  // Handle app state changes
+  useEffect(() => {
+    const handleAppStateChange = (nextAppState: string) => {
+      setIsAppActive(nextAppState === 'active');
+      
+      if (nextAppState !== 'active' && sound) {
+        stopSound();
+      }
+    };
+
+    const subscription = AppState.addEventListener('change', handleAppStateChange);
+
+    return () => {
+      subscription?.remove();
+    };
+  }, [sound]);
+
   // Use Effect
   useEffect(() => {
     if (hasNewOrders) {
       const shouldPlaySound = hasNewOrders;
 
-      if (shouldPlaySound && !sound) {
+      if (shouldPlaySound && !sound && isAppActive) {
         playSound();
       } else if (!shouldPlaySound && sound) {
+        stopSound();
+      } else if (!isAppActive && sound) {
         stopSound();
       }
     } else {
@@ -71,7 +92,7 @@ export const SoundProvider = ({ children }: ISoundContextProviderProps) => {
         stopSound();
       }
     };
-  }, [hasNewOrders, sound]);
+  }, [hasNewOrders, sound, isAppActive]);
 
   return (
     <SoundContext.Provider value={{ playSound, stopSound }}>

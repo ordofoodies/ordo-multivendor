@@ -12,21 +12,9 @@ import { IRestaurantProviderProps } from "@/lib/utils/interfaces";
 const Context = React.createContext({});
 
 const Provider = ({ children }: IRestaurantProviderProps) => {
-  const [printer, setPrinter] = useState();
   const [notificationToken, setNotificationToken] = useState<string | null>(
     null,
   );
-
-  useEffect(() => {
-    (async () => {
-      try {
-        const printerStr = await AsyncStorage.getItem("printer");
-        if (printerStr) setPrinter(JSON.parse(printerStr));
-      } catch (error) {
-        console.error("Error fetching printer data from AsyncStorage:", error);
-      }
-    })();
-  }, []);
 
   const { loading, error, data, subscribeToMore, refetch, networkStatus } =
     useQuery(GET_ORDERS, {
@@ -104,8 +92,6 @@ const Provider = ({ children }: IRestaurantProviderProps) => {
         subscribeToMoreOrders,
         refetch,
         networkStatus,
-        printer,
-        setPrinter,
         notificationToken,
       }}
     >

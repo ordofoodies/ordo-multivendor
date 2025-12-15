@@ -28,8 +28,12 @@ function TopBrands(props) {
     variables: {
       latitude: location?.latitude,
       longitude: location?.longitude
-    }
+    },
+    skip: !location?.latitude || !location?.longitude,
+    fetchPolicy: 'cache-and-network'
   })
+  
+
   const RenderItem = ({ item }) => (
     <TouchableOpacity style={styles().topbrandsContainer} onPress={() => navigation.navigate('Restaurant', { ...item })}>
       <View style={styles().brandImgContainer}>
@@ -52,12 +56,17 @@ function TopBrands(props) {
     </TouchableOpacity>
   )
 
+  if (!location?.latitude || !location?.longitude) {
+    return null
+  }
+  
   if (loading) return <TopBrandsLoadingUI />
-  if (error) return <Text style={styles().margin}>Error: {error.message}</Text>
+  if (error) {
+    return <Text style={styles().margin}>Error: {error.message}</Text>
+  }
 
-  const restaurantBrands = data?.topRatedVendorsPreview?.filter((item) => item.shopType === 'restaurant')
-
-  const groceryBrands = data?.topRatedVendorsPreview?.filter((item) => item.shopType === 'grocery')
+  const restaurantBrands = data?.topRatedVendorsPreview?.filter((item) => item.shopType?.toLowerCase() === 'restaurant') || []
+  const groceryBrands = data?.topRatedVendorsPreview?.filter((item) => item.shopType?.toLowerCase() === 'grocery') || []
 
   return (
     <View style={styles().mainContainer}>
