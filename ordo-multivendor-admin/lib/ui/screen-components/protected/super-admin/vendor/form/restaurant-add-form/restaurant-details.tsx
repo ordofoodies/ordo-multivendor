@@ -33,7 +33,6 @@ import {
   MAX_LANSDCAPE_FILE_SIZE,
   MAX_SQUARE_FILE_SIZE,
   RestaurantErrors,
-  SHOP_TYPE,
 } from '@/lib/utils/constants';
 
 // Interface
@@ -65,6 +64,7 @@ import {
 } from '@apollo/client';
 import { useTranslations } from 'next-intl';
 import CustomPhoneTextField from '@/lib/ui/useable-components/phone-input-field';
+import { useShopTypes } from '@/lib/hooks/useShopType';
 
 const initialValues: IRestaurantForm = {
   name: '',
@@ -143,6 +143,11 @@ export default function RestaurantDetails({
     [cuisineResponse.data?.cuisines]
   );
 
+  const { dropdownList, loading } = useShopTypes({
+    invoke_now: true,
+    transform_to_dropdown_list: true,
+  });
+
   // Handlers
   const onCreateRestaurant = async (data: IRestaurantForm) => {
     try {
@@ -173,7 +178,7 @@ export default function RestaurantDetails({
         return;
       } else {
         await createRestaurant({
-          variables: {  
+          variables: {
             owner: vendorId,
             restaurant: {
               name: data.name,
@@ -194,8 +199,6 @@ export default function RestaurantDetails({
           },
         });
       }
-
-      
     } catch (error) {
       showToast({
         type: 'error',
@@ -481,12 +484,13 @@ export default function RestaurantDetails({
                         />
                       </div>
                       <div>
-                        <CustomDropdownComponent
+                         <CustomDropdownComponent
                           name="shopType"
                           placeholder={t('Shop Category')}
                           selectedItem={values.shopType}
                           setSelectedItem={setFieldValue}
-                          options={SHOP_TYPE}
+                          loading={loading}
+                          options={dropdownList || []}
                           showLabel={true}
                           style={{
                             borderColor: onErrorMessageMatcher(
