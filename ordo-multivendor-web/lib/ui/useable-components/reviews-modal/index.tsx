@@ -11,6 +11,7 @@ import {
 } from "@/lib/utils/interfaces/reviews.interface";
 import { Dialog } from "primereact/dialog";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 const ReviewsModal = ({
   visible,
@@ -50,6 +51,9 @@ const ReviewsModal = ({
         percentage: totalReviews ? Math.round((count / totalReviews) * 100) : 0,
       }));
   }, [reviewResult, hasReviews]);
+
+    const t = useTranslations();
+  
 
   const renderStars = (rating: number) => (
     <Rating
@@ -162,11 +166,11 @@ const ReviewsModal = ({
           >
             <div className="text-[3.5rem] animate-bounce mb-4">📭</div>
             <h2 className="text-xl md:text-3xl font-semibold text-gray-800 dark:text-gray-200 mb-2">
-              Oops! No feedback yet.
+
+              {t("no_reviews_yet")}
             </h2>
             <p className="text-gray-600 dark:text-gray-400 max-w-xs md:max-w-md text-sm md:text-base">
-              Be the first to share your experience and help others make better
-              choices!
+              {t("be_the_first_to_share_your_experience")}
             </p>
           </motion.div>
         )}

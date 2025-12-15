@@ -22,8 +22,8 @@
       [
         "@sentry/react-native/expo",
         {
-          "organization": "ninjas-code",
-          "project": "enatega-rider-app",
+          "organization": "ordo-02",
+          "project": "ordo-rider",
           "url": "https://sentry.io/"
         }
       ],

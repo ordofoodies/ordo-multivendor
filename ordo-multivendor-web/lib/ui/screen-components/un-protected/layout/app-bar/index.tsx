@@ -634,7 +634,7 @@ const AppTopbar = ({ handleModalToggle }: IAppBarProps) => {
                         <CartSvg color="black" width={22} height={22} />
                       </div>
                       {cartCount > 0 && authToken && (
-                        <div className="absolute -top-1 -right-1 bg-black text-[#5AC12F] text-[10px] w-5 h-5 rounded-full flex items-center justify-center">
+                        <div className="absolute -top-1 -right-1 bg-black text-primary-color text-[10px] w-5 h-5 rounded-full flex items-center justify-center">
                           {cartCount}
                         </div>
                       )}
@@ -759,7 +759,7 @@ const AppTopbar = ({ handleModalToggle }: IAppBarProps) => {
             />
 
             <button
-              className="w-1/2 h-fit flex items-center justify-center gap-2 bg-[#5AC12F] text-white py-2 rounded-full text-sm font-medium"
+              className="w-1/2 h-fit flex items-center justify-center gap-2 bg-primary-color text-white py-2 rounded-full text-sm font-medium"
               onClick={onLogout}
             >
               <FontAwesomeIcon icon={faSignOutAlt} />

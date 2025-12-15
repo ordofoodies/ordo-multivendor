@@ -63,7 +63,7 @@ export default function MakeSidebar() {
     {
       text: 'My Website',
       label: t('My Website'),
-      route: 'https://web-ordo.netlify.app/',
+      route: 'https://ordofoodies.com/',
       isParent: true,
       icon: faUpRightFromSquare,
       isClickable: true,

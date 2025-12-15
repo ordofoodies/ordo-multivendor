@@ -98,7 +98,7 @@ export default function LoginWithEmail({
             onChange={(e) => handleChange(e.target.value)}
             className={`pl-10 w-full py-2 px-3 rounded-md border ${
               isValid ? "border-gray-300" : "border-red-500"
-            } focus:outline-none focus:ring-2 focus:ring-[#5AC12F] dark:bg-gray-900 dark:border-gray-700 dark:text-gray-300`}
+            } focus:outline-none focus:ring-2 focus:ring-orange-500 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-300`}
           />
         </div>
 

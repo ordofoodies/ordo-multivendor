@@ -354,7 +354,7 @@ export default function GetHelpMain() {
                 onChange={(e) => setDescription(e.target.value)}
                 rows={4}
                 placeholder={t("describe_issue_in_detail_placeholder")}
-                className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-md dark:bg-gray-800 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-[#5AC12F]"
+                className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-md dark:bg-gray-800 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-color"
               />
             </div>
           </div>

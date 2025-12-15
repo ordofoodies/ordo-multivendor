@@ -692,7 +692,9 @@ function Checkout(props) {
     )
   }
   let deliveryTime = Math.floor((orderDate - Date.now()) / 1000 / 60)
-  if (deliveryTime < 1) deliveryTime += restaurant?.deliveryTime
+  if (deliveryTime < 1) {
+    deliveryTime = restaurant?.deliveryTime || 30
+  }
   if (loading || loadingData || loadingTip || mutateOrderLoading || loadingOrder) return loadginScreen()
 
   return (

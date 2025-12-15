@@ -305,7 +305,7 @@ export default function SettingsMain() {
               />
 
               <button
-                className="w-1/2 h-fit flex items-center justify-center gap-2 bg-[#5AC12F] text-white py-2 rounded-full text-sm font-medium"
+                className="w-1/2 h-fit flex items-center justify-center gap-2 bg-primary-color text-white py-2 rounded-full text-sm font-medium"
                 onClick={handleLogout}
               >
                 <FontAwesomeIcon icon={faSignOutAlt} />

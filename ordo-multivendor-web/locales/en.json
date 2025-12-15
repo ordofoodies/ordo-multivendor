@@ -32,7 +32,7 @@
     "subText6": "For stores"
   },
   "InfoCardHomeScreen": {
-    "tagLine": "LIFE TASTES BETTER WITH ENATEGA",
+    "tagLine": "LIFE TASTES BETTER WITH Ordo",
     "subHeading": "Almost everything delivered to you – quickly, reliably, and affordably",
     "Title1": "Real support from real people",
     "SubText1": "Our world-class support team has your back, with friendly assistance and fast response times.",
@@ -100,13 +100,13 @@
   "DiscoveryPage": {
     "Mostorder": "Most ordered restaurants",
 
-    "storenearyou": "Restaurants near you",
+    "storenearyou": "Restaurants Near you",
 
     "ourbrand": "Our brands",
     "popularrest": "Popular restaurants"
   },
   "RestaurantPage": {
-    "headingTitle": "Restaurants near you",
+    "headingTitle": "Restaurants Near you",
     "cuisineSectionTitle": "Browse Cuisines",
     "mainSectionTitle": "All Restaurants"
   },
@@ -957,5 +957,6 @@
   "you_currently_have": "You currently have",
   "active": "active",
   "you_can_only_delete_account": "You can only delete your account once all your orders are completed",
-  "shop-types":"Shop Types"
+  "shop-types":"Shop Types",
+  "be_the_first_to_share_your_experience" : "be the first to share your experience"
 }

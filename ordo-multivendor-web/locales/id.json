@@ -42,7 +42,7 @@
     "subText6": "Untuk toko"
   },
   "InfoCardHomeScreen": {
-    "tagLine": "HIDUP TERASA LEBIH ENAK DENGAN ENATEGA",
+    "tagLine": "HIDUP TERASA LEBIH ENAK DENGAN ORDO",
     "subHeading": "Hampir segala sesuatu diantarkan kepada Anda – dengan cepat, andal, dan terjangkau",
     "Title1": "Dukungan nyata dari orang nyata",
     "SubText1": "Tim dukungan kelas dunia kami siap membantu, dengan bantuan ramah dan waktu respons cepat.",
@@ -915,5 +915,6 @@
   "Thursday": "Kamis",
   "Friday": "Jumat",
   "Saturday": "Sabtu",
-  "Sunday": "Minggu"
+  "Sunday": "Minggu",
+  "shop-types":"Jenis Toko"
 }
