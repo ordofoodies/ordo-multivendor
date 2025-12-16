@@ -46,7 +46,7 @@ const Couriers:React.FC = () => {
 
       <TinyTiles
         image={
-          "https://images.ctfassets.net/23u853certza/QScF4OasY8MBTmzrKJfv1/9afd4f8a826825cc097fb36606a81963/3DCourier.webp?w=200&q=90&fm=webp"
+          "/assets/icons/we-do-heavy-lifting.png"
         }
         heading={t('RidersInfoCards.TinyTile.heading')}
         buttonText={t('RidersInfoCards.TinyTile.subText')}
