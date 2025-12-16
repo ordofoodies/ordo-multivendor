@@ -26,8 +26,8 @@ const bgColor = theme === "dark" ? darkBackColor : backColor;
       <div className='w-[300px] mx-auto flex flex-col items-center justify-between'>
       <Image
       src={image}
-      width={200}
-      height={200}
+      width={50}
+      height={50}
       alt="Image"
       />
       <div className='text-center my-[30px] '>

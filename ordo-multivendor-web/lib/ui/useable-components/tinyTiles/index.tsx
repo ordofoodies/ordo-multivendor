@@ -38,7 +38,7 @@ const TinyTiles:React.FC<TilesData> = ({image,heading,buttonText,backColor,link}
       {backgroundColor:backColor}
       }>
       <div className='flex'>
-        <Image src={image} width={100} height={100} alt={"Image"}/>
+        <Image src={image} width={50} height={50} alt={"Image"}/>
         </div>
         <div className='w-full justify-between flex flex-col gap-2'>
         <h1 className='text-[#009de0] font-semibold text-[18px] mx-4'>{heading}</h1>
