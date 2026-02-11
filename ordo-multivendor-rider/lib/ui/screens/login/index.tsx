@@ -48,7 +48,7 @@ const LoginScreen = () => {
   const { appTheme } = useApptheme();
   const client = setupApollo();
   const { t } = useTranslation();
-  const { onLogin, creds, isLogging } = useLogin();
+  const { onLogin, isLogging } = useLogin();
   const [loading, setLoading] = useState(false);
 
   // Handlers
@@ -64,23 +64,12 @@ const LoginScreen = () => {
     }
   };
 
-  const onInit = () => {
-    try {
-      client
-        ?.clearStore()
-        .catch((err) => console.log("Apollo clearStore error:", err));
-
-      if (!creds?.username) return;
-      setInitialValues(creds);
-    } catch (err) {
-      console.log("error login", err);
-    }
-  };
-
   // Use Effect
   useEffect(() => {
-    onInit();
-  }, [creds]);
+    client
+      ?.clearStore()
+      .catch((err) => console.log("Apollo clearStore error:", err));
+  }, []);
 
   if (loading) {
     return (

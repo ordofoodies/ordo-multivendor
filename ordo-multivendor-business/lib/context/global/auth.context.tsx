@@ -91,28 +91,11 @@ export const AuthProvider: React.FC<IAuthProviderProps> = ({
     }
   };
 
-  async function checkAuth() {
-    try {
-      const token = await SecureStore.getItemAsync(STORE_TOKEN);
-      const storeId = await AsyncStorage.getItem("store-id");
 
-      if (!storeId || !token) {
-        return await logout();
-      }
-      setToken(token);
-    } catch (error) {
-      console.error("error getting store id & token", error);
-      await logout();
-    }
-  }
 
   // UseEffects
   useEffect(() => {
     handleSetCurrentLanguage();
-  }, []);
-
-  useEffect(() => {
-    checkAuth();
   }, []);
 
   useEffect(() => {
