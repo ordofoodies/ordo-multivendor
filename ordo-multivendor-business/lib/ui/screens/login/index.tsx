@@ -33,12 +33,11 @@ const initial: ILoginInitialValues = {
 const LoginScreen = () => {
   // States
   const [passwordVisible, setPasswordVisible] = useState(false);
-  const [initialValues, setInitialValues] = useState(initial);
 
   // Hooks
   const { appTheme } = useApptheme();
   const { t } = useTranslation();
-  const { onLogin, creds } = useLogin();
+  const { onLogin } = useLogin();
 
   // Handlers
   const onLoginHandler = async (creds: ILoginInitialValues) => {
@@ -50,15 +49,7 @@ const LoginScreen = () => {
     }
   };
 
-  const onInit = () => {
-    if (!creds?.username) return;
-    setInitialValues(creds);
-  };
 
-  // Use Effect
-  useEffect(() => {
-    onInit();
-  }, [creds]);
 
   return (
     <KeyboardAvoidingView
@@ -76,8 +67,7 @@ const LoginScreen = () => {
           // contentContainerStyle={{ height: height * 1 }}
         >
           <Formik
-            initialValues={initialValues}
-            enableReinitialize={true}
+            initialValues={initial}
             validationSchema={SignInSchema}
             onSubmit={onLoginHandler}
           >
